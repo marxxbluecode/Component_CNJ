@@ -2,19 +2,19 @@ import React from 'react';
 import * as S from './style';
 
 
-function Gender({option}) {
+function Gender({option, name, display, WidthLabel}) {
   return (
-      <div>
+      <S.Container display={display}>
           {option?.map((item, index) => (
-            <div key={index}>
-                <S.InputWrapper>
+          
+                <S.InputWrapper key={index} WidthLabel={WidthLabel} >
+                    <S.Input type='radio' name={name} alt='opções'/>
                 {item.option}
-                    <S.Input type='radio' name='option' alt='opções'/>
                 </S.InputWrapper>
-              </div>
+          
           )
         )}
-      </div>
+      </S.Container>
   );
 }
 export default Gender;
